@@ -1,17 +1,16 @@
-import { Routes, Route } from "react-router-dom";
-import { Home } from "./pages/Home";
-import { NotFound } from "./pages/NotFound";
-import { Toaster } from "@/components/ui/toaster";
-
 function App() {
   return (
-    <>
-      <Toaster />
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </>
+    <div
+      style={{
+        backgroundColor: "black",
+        color: "lime",
+        minHeight: "100vh",
+        padding: "40px",
+        fontSize: "32px",
+      }}
+    >
+      PORTFOLIO IS RENDERING ✅
+    </div>
   );
 }
 
