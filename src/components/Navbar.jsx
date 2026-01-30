@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const navItems = [
@@ -16,7 +16,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10); // ✅ FIXED
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -27,6 +27,10 @@ export const Navbar = () => {
     document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
     });
+  };
+
+  const toggleTheme = () => {
+    document.documentElement.classList.toggle("dark");
   };
 
   return (
@@ -50,27 +54,39 @@ export const Navbar = () => {
           </span>
         </button>
 
-        {/* DESKTOP NAV */}
-        <div className="hidden md:flex space-x-8">
-          {navItems.map((item, key) => (
-            <button
-              key={key}
-              onClick={() => scrollToSection(item.id)}
-              className="text-foreground/80 hover:text-primary transition-colors duration-300"
-            >
-              {item.name}
-            </button>
-          ))}
-        </div>
+        {/* RIGHT SIDE CONTROLS */}
+        <div className="flex items-center gap-4">
+          {/* DESKTOP NAV */}
+          <div className="hidden md:flex space-x-8">
+            {navItems.map((item, key) => (
+              <button
+                key={key}
+                onClick={() => scrollToSection(item.id)}
+                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+              >
+                {item.name}
+              </button>
+            ))}
+          </div>
 
-        {/* MOBILE MENU BUTTON */}
-        <button
-          onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="md:hidden p-2 text-foreground z-50"
-          aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          {/* 🌞 SINGLE THEME TOGGLE (ONE BUTTON ONLY) */}
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-primary/10 transition-colors"
+            aria-label="Toggle theme"
+          >
+            <Sun size={20} />
+          </button>
+
+          {/* MOBILE MENU BUTTON */}
+          <button
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="md:hidden p-2 text-foreground z-50"
+            aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
 
         {/* MOBILE NAV */}
         <div
