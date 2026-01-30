@@ -1,16 +1,13 @@
+import { Routes, Route } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { NotFound } from "./pages/NotFound";
+
 function App() {
   return (
-    <div
-      style={{
-        backgroundColor: "black",
-        color: "lime",
-        minHeight: "100vh",
-        padding: "40px",
-        fontSize: "32px",
-      }}
-    >
-      PORTFOLIO IS RENDERING ✅
-    </div>
+    <Routes>
+      <Route index element={<Home />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
