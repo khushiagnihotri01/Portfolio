@@ -21,15 +21,23 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-          I am an Associate Software Developer with 1 year of experience building and supporting backend applications using Java and Spring Boot.
-           I enjoy solving problems, working with APIs and databases, and collaborating in Agile teams to create meaningful,
+            I am an Associate Software Developer with 1 year of experience building and supporting backend applications using Java and Spring Boot.
+            I enjoy solving problems, working with APIs and databases, and collaborating in Agile teams to create meaningful,
             data-driven solutions.
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
-            <a href="#projects" className="cosmic-button">
+            <button
+              onClick={() => {
+                document.getElementById("projects")?.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+              className="cosmic-button"
+            >
               View My Work
-            </a>
+            </button>
+
           </div>
         </div>
       </div>

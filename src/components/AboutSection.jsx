@@ -16,9 +16,9 @@ export const AboutSection = () => {
             </h3>
 
             <p className="text-muted-foreground">
-             Associate Software Developer with a strong interest in backend engineering. 
-             Experienced in Java, Spring Boot, REST APIs, and databases, with a focus on writing clean, efficient, 
-             and scalable code.
+              Associate Software Developer with a strong interest in backend engineering.
+              Experienced in Java, Spring Boot, REST APIs, and databases, with a focus on writing clean, efficient,
+              and scalable code.
             </p>
 
             <p className="text-muted-foreground">
@@ -29,10 +29,17 @@ export const AboutSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-              <a href="#contact" className="cosmic-button">
-                {" "}
+              <button
+                onClick={() => {
+                  document.getElementById("contact")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+                className="cosmic-button"
+              >
                 Get In Touch
-              </a>
+              </button>
+
 
               <a
                 href="https://drive.google.com/file/d/1DpWjxckF_Pd1UUVL37KaX0CAPO_W7SU5/view?usp=sharing"
@@ -52,7 +59,7 @@ export const AboutSection = () => {
                 <div className="text-left">
                   <h4 className="font-semibold text-lg"> Backend Development</h4>
                   <p className="text-muted-foreground">
-                  Developing reliable backend services and APIs that keep applications running smoothly
+                    Developing reliable backend services and APIs that keep applications running smoothly
                   </p>
                 </div>
               </div>
@@ -65,7 +72,7 @@ export const AboutSection = () => {
                 <div className="text-left">
                   <h4 className="font-semibold text-lg">Database Design</h4>
                   <p className="text-muted-foreground">
-                   Designing databases that keep data structured, secure, and easy to work with.
+                    Designing databases that keep data structured, secure, and easy to work with.
                   </p>
                 </div>
               </div>

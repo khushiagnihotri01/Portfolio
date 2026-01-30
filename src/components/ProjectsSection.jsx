@@ -1,12 +1,13 @@
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import project1 from "@/assets/projects/project1.png";
 
 const projects = [
   {
     id: 1,
     title: "Online E-Commerce Backend Application",
     description: "A Optimized Scalable Fast Online E-commerce Backend.",
-    image: "/projects/project1.png",
-    tags: ["Java", "Spring Boot","My SQL"],
+    image: project1,
+    tags: ["Java", "Spring Boot", "My SQL"],
     demoUrl: "#",
     githubUrl: "https://github.com/khushiagnihotri01/Online-Shopping-Cart",
   }
@@ -76,12 +77,14 @@ export const ProjectsSection = () => {
                 <div className="flex justify-between items-center">
                   <div className="flex space-x-3">
                     <a
-                      href="{project.demoUrl}"
+                      href={project.demoUrl}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="text-foreground/80 hover:text-primary transition-colors duration-300"
                     >
                       <ExternalLink size={20} />
                     </a>
+
                     <a
                       href={project.githubUrl}
                       target="_blank"
